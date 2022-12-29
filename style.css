@@ -21,13 +21,31 @@ main .card {
   background-color: hsl(0deg, 0%, 100%);
   display: flex;
 }
+@media screen and (max-width: 375px) {
+  main .card {
+    flex-direction: column;
+    width: 320px;
+    height: 90vh;
+  }
+}
 main .card .imagen {
   width: 50%;
-}
-main .card .imagen #imagen {
-  width: 100%;
+  background-image: url(../images/image-product-desktop.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+}
+@media screen and (max-width: 375px) {
+  main .card .imagen {
+    background-image: url(../images/image-product-mobile.jpg);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    width: 100%;
+    height: 40%;
+  }
 }
 main .card .info {
   width: 50%;
@@ -35,6 +53,14 @@ main .card .info {
   flex-direction: column;
   justify-content: space-around;
   padding: 20px 30px;
+}
+@media screen and (max-width: 375px) {
+  main .card .info {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    height: 60%;
+  }
 }
 main .card .info h5 {
   color: hsl(228deg, 12%, 48%);
@@ -59,13 +85,26 @@ main .card .info .precio h1 {
   font-family: "Fraunces", serif;
   margin-right: 20px;
 }
+main .card .info .precio h6 {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(228deg, 12%, 48%);
+  font-size: 12px;
+  text-decoration: line-through;
+}
 main .card .info button {
   background-color: hsl(158deg, 36%, 37%);
   border: none;
   padding: 15px;
   border-radius: 10px;
   color: hsl(0deg, 0%, 100%);
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .card .info button:hover {
+  background-color: hsl(158deg, 48%, 17%);
 }
 
 /*# sourceMappingURL=style.css.map */
